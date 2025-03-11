@@ -1,26 +1,27 @@
 package com.example.kiosk;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);            // 스캐너 생성
+        List<MenuItem> allMenu = new ArrayList<>();     // 리스트 생성
 
         System.out.println("--------------------Nov Cafe--------------------");
         System.out.println("----------------------Menu----------------------");
 
-        MenuItem americano = new MenuItem("1. 아메리카노", 4.5, "에스프레소에 뜨거운 물을 희석하여 만든 커피 음료");
-        MenuItem espresso = new MenuItem("2. 에스프레소", 5.0, "볶은 커피를 가늘게 분쇄한 뒤, 고온의 물을 가해 짧은 시간에 추출한 진한 커피");
-        MenuItem cappuccino = new MenuItem("3. 카푸치노", 5.0, "에스프레소를 베이스로 한 우유를 넣은 커피 음료");
-        MenuItem mocha = new MenuItem("4. 카페모카", 5.5, "에스프레소, 우유, 초콜릿 시럽을 넣어 만든 커피 음료");
-        MenuItem vanilla = new MenuItem("5. 바닐라 라떼", 5.5, "에스프레소에 우유와 바닐라시럽을 섞어 만든 커피");
 
+        allMenu.add(new MenuItem("1. 아메리카노", 4.5, "에스프레소에 뜨거운 물을 희석하여 만든 커피 음료"));
+        allMenu.add(new MenuItem("2. 에스프레소", 5.0, "볶은 커피를 가늘게 분쇄한 뒤, 고온의 물을 가해 짧은 시간에 추출한 진한 커피"));
+        allMenu.add(new MenuItem("3. 카푸치노", 5.0, "에스프레소를 베이스로 한 우유를 넣은 커피 음료"));
+        allMenu.add(new MenuItem("4. 카페모카", 5.5, "에스프레소, 우유, 초콜릿 시럽을 넣어 만든 커피 음료"));
+        allMenu.add(new MenuItem("5. 바닐라 라떼", 5.5, "에스프레소에 우유와 바닐라시럽을 섞어 만든 커피"));
 
-        americano.cafeMenu();
-        espresso.cafeMenu();
-        cappuccino.cafeMenu();
-        mocha.cafeMenu();
-        vanilla.cafeMenu();
+        for(MenuItem cafeMenu : allMenu) {      // for 반복문으로 allMenu에 있는 MenuItem들을 순차적으로 탐색
+            cafeMenu.cafeMenu();
+        }
 
         System.out.println("원하시는 메뉴를 선택해 주세요: ");
 
