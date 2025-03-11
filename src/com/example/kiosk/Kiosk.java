@@ -11,9 +11,7 @@ public class Kiosk {
     List<MenuItem> allMenu = new ArrayList<>();     // 리스트 생성
 
     // 생성자
-    public Kiosk() {
-        sc = new Scanner(System.in);
-        allMenu = new ArrayList<>();
+    public Kiosk() {        // 메뉴 추가
 
         allMenu.add(new MenuItem("1. 아메리카노", 4.5, "에스프레소에 뜨거운 물을 희석하여 만든 커피 음료"));
         allMenu.add(new MenuItem("2. 에스프레소", 5.0, "볶은 커피를 가늘게 분쇄한 뒤, 고온의 물을 가해 짧은 시간에 추출한 진한 커피"));
@@ -24,18 +22,18 @@ public class Kiosk {
 
     // 기능
 
-    public void firstGreet() {
+    public void firstGreet() {      // 인사
         System.out.println("--------------------Nov Cafe--------------------");
         System.out.println("----------------------Menu----------------------");
     }
 
-    public void showMenu() {
+    public void showMenu() {        // 메뉴 보여주기
         for(MenuItem cafeMenu : allMenu) {      // for 반복문으로 allMenu에 있는 MenuItem들을 순차적으로 탐색
             cafeMenu.cafeMenu();
         }
     }
 
-    public void selectMenu() {
+    public void selectMenu() {      // 메뉴 선택
         System.out.println("원하시는 메뉴를 선택해 주세요: ");
 
         while(true){
@@ -61,10 +59,16 @@ public class Kiosk {
                 break;
 
             } else {
-                System.out.println("잘못된 번호를 입력하셨습니다.");
+                System.out.println("잘못된 번호를 입력하셨습니다.");     // 예외 처리
                 System.out.println("추가 선택(종료는 0): ");
             }
         }
+    }
+
+    public void start() {
+        firstGreet();
+        showMenu();
+        selectMenu();
     }
 
 
