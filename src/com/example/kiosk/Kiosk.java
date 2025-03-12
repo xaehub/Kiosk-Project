@@ -45,6 +45,12 @@ public class Kiosk {
             } else if(a == 5) {
                 System.out.println("바닐라 라떼");
                 System.out.println("추가 선택(종료는 0): ");
+            } else if(a == 6) {
+                System.out.println("초코 케이크");
+                System.out.println("추가 선택(종료는 0): ");
+            } else if(a == 7) {
+                System.out.println("치즈 케이크");
+                System.out.println("추가 선택(종료는 0): ");
             } else if(a == 0) {
                 System.out.println("키오스크 종료");
                 break;

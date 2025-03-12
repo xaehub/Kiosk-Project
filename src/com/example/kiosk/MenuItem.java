@@ -5,9 +5,11 @@ public class MenuItem {
     private String name;
     private double price;
     private String menuInfo;
+    private String categori;
 
     // 생성자
-    public MenuItem(String name, double price, String menuInfo) {
+    public MenuItem(String categori, String name, double price, String menuInfo) {
+        this.categori = categori;
         this.name = name;
         this.price = price;
         this.menuInfo = menuInfo;
@@ -16,7 +18,23 @@ public class MenuItem {
     // 기능
 
     public void cafeMenu() {
-        System.out.println(name + "   |   " + price + "   |   " + menuInfo);
+        System.out.println(categori + "   |   " + name + "   |   " + price + "   |   " + menuInfo);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getMenuInfo() {
+        return menuInfo;
+    }
+
+    public String getCategori() {
+        return categori;
     }
 
 
