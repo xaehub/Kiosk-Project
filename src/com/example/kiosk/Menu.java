@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class Menu {
     List<MenuItem> allMenu = new ArrayList<>();     // 리스트 생성
-    List<String> categories = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
     public Menu() {
@@ -26,6 +25,24 @@ public class Menu {
         System.out.println("1. 커피");
         System.out.println("2. 디저트");
         System.out.println("0. 종료");
+    }
+
+    public void selectMainMenu() {
+        showCategories();
+        System.out.println("원하시는 메뉴를 선택해 주세요: ");
+
+        int a = sc.nextInt();
+
+        if(a == 1) {
+            selectCategori(a);
+        } else if(a == 2) {
+            selectCategori(a);
+        } else if( a == 0){
+            System.out.println("키오스크를 종료합니다.");
+        } else {
+            System.out.println("잘못된 번호를 입력하셨습니다: ");
+            selectMainMenu();
+        }
     }
 
     public void selectCoffeeMenu() {      // 메뉴 선택
@@ -73,15 +90,16 @@ public class Menu {
                 System.out.println("치즈 케이크");
                 System.out.println("추가 선택(뒤로가기는 0): ");
             } else if(a == 0) {
-                System.out.println("추가 선택(뒤로가기는 0v3)");
+                System.out.println("추가 선택(뒤로가기는 0)");
                 break;
 
             } else {
                 System.out.println("잘못된 번호를 입력하셨습니다.");     // 예외 처리
-                System.out.println("추가 선택(종료는 0v1): ");
+                System.out.println("추가 선택(종료는 0): ");
             }
         }
     }
+
 
     public void selectCategori(int a) {
         if (a == 1) {
@@ -101,11 +119,10 @@ public class Menu {
             }
             selectDesertMenu();
         } else {
-            System.out.println("잘못된 입력입니다. 다시 선택해주세요v2: ");
-            return;
+            System.out.println("잘못된 입력입니다. 다시 선택해주세요: ");
         }
 
-        showCategories();
+        selectMainMenu();
 
     }
 
