@@ -2,10 +2,12 @@ package com.example.kiosk;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Menu {
     List<MenuItem> allMenu = new ArrayList<>();     // 리스트 생성
     List<String> categories = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
 
     public Menu() {
         allMenu.add(new MenuItem("커피","1. 아메리카노", 4.5, "에스프레소에 뜨거운 물을 희석하여 만든 커피 음료"));
@@ -18,16 +20,93 @@ public class Menu {
         allMenu.add(new MenuItem("디저트", "7. 치즈 케이크", 7.0, "한 입 베어 무는 순간, 깊고 진한 크림치즈의 풍미가 입안 가득 퍼집니다"));
     }
 
+
+
     public void showCategories() {
-        System.out.println("1. Coffee");
-        System.out.println("2. Desserts");
+        System.out.println("1. 커피");
+        System.out.println("2. 디저트");
         System.out.println("0. 종료");
     }
 
-    public void showMenu() {        // 메뉴 보여주기
-        for(MenuItem cafeMenu : allMenu) {      // for 반복문으로 allMenu에 있는 MenuItem들을 순차적으로 탐색
-            cafeMenu.cafeMenu();
+    public void selectCoffeeMenu() {      // 메뉴 선택
+        System.out.println("원하시는 메뉴를 선택해 주세요: ");
+
+        while(true){
+            int a = sc.nextInt();
+
+            if(a == 1) {
+                System.out.println("아메리카노");
+                System.out.println("추가 선택(뒤로가기는 0): ");
+            } else if(a == 2) {
+                System.out.println("에스프레소");
+                System.out.println("추가 선택(뒤로가기는 0): ");
+            } else if(a == 3) {
+                System.out.println("카푸치노");
+                System.out.println("추가 선택(뒤로가기는 0): ");
+            } else if(a == 4) {
+                System.out.println("카페모카");
+                System.out.println("추가 선택(뒤로가기는 0): ");
+            } else if(a == 5) {
+                System.out.println("바닐라 라떼");
+                System.out.println("추가 선택(뒤로가기는 0): ");
+            } else if(a == 0) {
+                System.out.println("추가 선택(뒤로가기는 0)");
+                break;
+
+            } else {
+                System.out.println("잘못된 번호를 입력하셨습니다.");     // 예외 처리
+                System.out.println("추가 선택(종료는 0): ");
+            }
         }
+    }
+
+    public void selectDesertMenu() {      // 메뉴 선택
+        System.out.println("원하시는 메뉴를 선택해 주세요: ");
+
+        while(true){
+            int a = sc.nextInt();
+
+            if(a == 6) {
+                System.out.println("초코 케이크");
+                System.out.println("추가 선택(뒤로가기는 0): ");
+            } else if(a == 7) {
+                System.out.println("치즈 케이크");
+                System.out.println("추가 선택(뒤로가기는 0): ");
+            } else if(a == 0) {
+                System.out.println("추가 선택(뒤로가기는 0v3)");
+                break;
+
+            } else {
+                System.out.println("잘못된 번호를 입력하셨습니다.");     // 예외 처리
+                System.out.println("추가 선택(종료는 0v1): ");
+            }
+        }
+    }
+
+    public void selectCategori(int a) {
+        if (a == 1) {
+            System.out.println("[----------- 커피 메뉴 -----------");
+            for (MenuItem item : allMenu) {
+                if (item.getCategori().equals("커피")) {
+                    System.out.println(item.getName() + " | " + item.getPrice() + " | " + item.getMenuInfo());
+                }
+            }
+            selectCoffeeMenu();
+        } else if (a == 2) {
+            System.out.println("---------- 디저트 메뉴 -----------");
+            for (MenuItem item : allMenu) {
+                if (item.getCategori().equals("디저트")) {
+                    System.out.println(item.getName() + " | " + item.getPrice() + " | " + item.getMenuInfo());
+                }
+            }
+            selectDesertMenu();
+        } else {
+            System.out.println("잘못된 입력입니다. 다시 선택해주세요v2: ");
+            return;
+        }
+
+        showCategories();
+
     }
 
 

@@ -23,49 +23,32 @@ public class Kiosk {
         System.out.println("----------------------Menu----------------------");
     }
 
-
-    public void selectMenu() {      // 메뉴 선택
+    public void selectMainMenu() {
+        menu.showCategories();
         System.out.println("원하시는 메뉴를 선택해 주세요: ");
 
-        while(true){
-            int a = sc.nextInt();
+        int a = sc.nextInt();
 
-            if(a == 1) {
-                System.out.println("아메리카노");
-                System.out.println("추가 선택(종료는 0): ");
-            } else if(a == 2) {
-                System.out.println("에스프레소");
-                System.out.println("추가 선택(종료는 0): ");
-            } else if(a == 3) {
-                System.out.println("카푸치노");
-                System.out.println("추가 선택(종료는 0): ");
-            } else if(a == 4) {
-                System.out.println("카페모카");
-                System.out.println("추가 선택(종료는 0): ");
-            } else if(a == 5) {
-                System.out.println("바닐라 라떼");
-                System.out.println("추가 선택(종료는 0): ");
-            } else if(a == 6) {
-                System.out.println("초코 케이크");
-                System.out.println("추가 선택(종료는 0): ");
-            } else if(a == 7) {
-                System.out.println("치즈 케이크");
-                System.out.println("추가 선택(종료는 0): ");
-            } else if(a == 0) {
-                System.out.println("키오스크 종료");
-                break;
-
-            } else {
-                System.out.println("잘못된 번호를 입력하셨습니다.");     // 예외 처리
-                System.out.println("추가 선택(종료는 0): ");
-            }
+        if(a == 1) {
+            menu.selectCategori(a);
+        } else if(a == 2) {
+            menu.selectCategori(a);
+        } else if( a == 0){
+            System.out.println("키오스크를 종료합니다.");
+        } else {
+            System.out.println("잘못된 번호를 입력하셨습니다: ");
+            selectMainMenu();
         }
     }
 
+
+
+
+
+
     public void start() {
         firstGreet();
-        menu.showMenu();
-        selectMenu();
+        selectMainMenu();
     }
 
 
