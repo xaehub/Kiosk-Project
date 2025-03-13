@@ -8,7 +8,7 @@ public class Menu {
     private List<MenuItem> allMenu = new ArrayList<>();     // 리스트 생성
     private Scanner sc = new Scanner(System.in);
 
-    public Menu() {
+    public Menu() {         //allMenu리스트에 MenuItem객체 추가
         allMenu.add(new MenuItem("커피","1. 아메리카노", 4.5, "에스프레소에 뜨거운 물을 희석하여 만든 커피 음료"));
         allMenu.add(new MenuItem("커피","2. 에스프레소", 5.0, "볶은 커피를 가늘게 분쇄한 뒤, 고온의 물을 가해 짧은 시간에 추출한 진한 커피"));
         allMenu.add(new MenuItem("커피","3. 카푸치노", 5.0, "에스프레소를 베이스로 한 우유를 넣은 커피 음료"));
@@ -19,13 +19,13 @@ public class Menu {
         allMenu.add(new MenuItem("디저트", "7. 치즈 케이크", 7.0, "한 입 베어 무는 순간, 깊고 진한 크림치즈의 풍미가 입안 가득 퍼집니다"));
     }
 
-    public void showCategories() {
+    public void showCategories() {      // 메인메뉴 출력
         System.out.println("1. 커피");
         System.out.println("2. 디저트");
         System.out.println("0. 종료");
     }
 
-    public void selectMainMenu() {
+    public void selectMainMenu() {      // 메인 메뉴 선택
         showCategories();
         System.out.println("원하시는 메뉴를 선택해 주세요: ");
 
@@ -43,7 +43,7 @@ public class Menu {
         }
     }
 
-    public void selectCoffeeMenu() {      // 메뉴 선택
+    public void selectCoffeeMenu() {      // 커피 상세 메뉴 선택
         System.out.println("원하시는 메뉴를 선택해 주세요: ");
 
         while(true){
@@ -75,7 +75,7 @@ public class Menu {
         }
     }
 
-    public void selectDesertMenu() {      // 메뉴 선택
+    public void selectDesertMenu() {      // 디저트 상세 메뉴 선택
         System.out.println("원하시는 메뉴를 선택해 주세요: ");
 
         while(true){
@@ -99,7 +99,7 @@ public class Menu {
     }
 
 
-    public void selectCategori(int a) {
+    public void selectCategori(int a) {     // 상세 메뉴 출력
         if (a == 1) {
             System.out.println("[----------- 커피 메뉴 -----------");
             for (MenuItem item : allMenu) {

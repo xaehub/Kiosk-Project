@@ -3,10 +3,10 @@ package com.example.kiosk;
 public class Kiosk {
 
     //속성
-    private Menu menu = new Menu();
+    private Menu menu = new Menu();     //메뉴 객체 생성
 
     // 생성자
-    public Kiosk() {        // 메뉴 추가
+    public Kiosk() {
 
     }
 
@@ -18,7 +18,7 @@ public class Kiosk {
     }
 
 
-    public void start() {
+    public void start() {           // 키오스크 프로그램 시작 클래스
         firstGreet();
         menu.selectMainMenu();
     }
