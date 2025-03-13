@@ -38,7 +38,7 @@ public class Menu {
         } else if( a == 0){
             System.out.println("키오스크를 종료합니다.");
         } else {
-            System.out.println("잘못된 번호를 입력하셨습니다: ");
+            System.out.println("없는 번호입니다. 다시 입력해 주세요: ");
             selectMainMenu();
         }
     }
@@ -70,7 +70,7 @@ public class Menu {
 
             } else {
                 System.out.println("잘못된 번호를 입력하셨습니다.");     // 예외 처리
-                System.out.println("추가 선택(종료는 0): ");
+                System.out.println("추가 선택(뒤로가기는 0): ");
             }
         }
     }
@@ -93,7 +93,7 @@ public class Menu {
 
             } else {
                 System.out.println("잘못된 번호를 입력하셨습니다.");     // 예외 처리
-                System.out.println("추가 선택(종료는 0): ");
+                System.out.println("추가 선택(뒤로가기는 0): ");
             }
         }
     }
