@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-    List<MenuItem> allMenu = new ArrayList<>();     // 리스트 생성
-    Scanner sc = new Scanner(System.in);
+    private List<MenuItem> allMenu = new ArrayList<>();     // 리스트 생성
+    private Scanner sc = new Scanner(System.in);
 
     public Menu() {
         allMenu.add(new MenuItem("커피","1. 아메리카노", 4.5, "에스프레소에 뜨거운 물을 희석하여 만든 커피 음료"));
@@ -18,8 +18,6 @@ public class Menu {
         allMenu.add(new MenuItem("디저트", "6. 초코 케이크", 7.0, "촉촉하고 부드러운 초코 시트와 버터크림이 어우러져 달콤하면서 진한 벨벳 케이크 느낌"));
         allMenu.add(new MenuItem("디저트", "7. 치즈 케이크", 7.0, "한 입 베어 무는 순간, 깊고 진한 크림치즈의 풍미가 입안 가득 퍼집니다"));
     }
-
-
 
     public void showCategories() {
         System.out.println("1. 커피");

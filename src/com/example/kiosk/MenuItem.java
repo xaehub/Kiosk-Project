@@ -17,11 +17,7 @@ public class MenuItem {
 
     // 기능
 
-    public void cafeMenu() {
-        System.out.println(categori + "   |   " + name + "   |   " + price + "   |   " + menuInfo);
-    }
-
-    public String getName() {
+    public String getName() {           // 게터
         return name;
     }
 

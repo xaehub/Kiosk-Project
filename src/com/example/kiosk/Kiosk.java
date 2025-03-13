@@ -3,7 +3,7 @@ package com.example.kiosk;
 public class Kiosk {
 
     //속성
-    Menu menu = new Menu();
+    private Menu menu = new Menu();
 
     // 생성자
     public Kiosk() {        // 메뉴 추가
